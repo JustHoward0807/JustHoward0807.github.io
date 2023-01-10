@@ -1,46 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Day1 HTML class</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>This is the first class of writing HTML remotely</h1>
-    <h2>Student ID: u1422283 <br> Name: Howard Lung Hao Tung</h2>
-    <img class = "center" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Utah_Utes_-_U_logo.svg/1121px-Utah_Utes_-_U_logo.svg.png" alt="U logo">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script defer src="main.js"></script>
+    <script src="projects.js"></script>
+    <link rel="stylesheet" href="restylesheet.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Howard's Portfolio</title>
+</head>
+<body onload="getHello()">
+<div id="container">
+    <div id="firstPage" class="child">
+        <section id="firstPageBox">
+            <div id="leftBox">
+                <div class="profile_pic"></div>
+                <!-- <img class="profile_pic" src="" alt="Me"/> -->
+                <button class="resume" onclick="openResume()">Resume</button>
+            </div>
 
-    <hr>
-    <h3> Interest: 
-    <ul>
-      <li>Coffee</li>
-      <li>Tea</li>
-      <li>Milk</li>
-    </ul>
+            <div id="rightBox">
+                <!-- For the title hello world -->
+                <h1 id="hello_world"><span id="hello">Hello</span> World!</h1>
+                <!-- The introduction -->
+                <p id="introduction">
+                    I’m Howard Tung. A software developer from Taiwan. I like to design
+                    and making creative, innovative, and unique projects. Feel free to
+                    contact me if you have any questions.
+                </p>
+                <!-- Icon to social media (LinkedIn, Github, Mail) -->
+                <!--      Distributed evenly      -->
+                <div id="socialAPP">
+                    <a href="https://www.linkedin.com/in/justhoward0807/" target="_blank">
+                        <img
+                                class="social"
+                                src="images/linkedin-icon-2.svg"
+                                alt="LinkedIn"
+                                height="35px"
+                                width="35px"
 
-    <ol>
-      <li>Basketball</li>
-      <li>Workout</li>
-    </ol>
+                        /></a>
+                    <!-- Jump to email me section -->
+                    <a href="#">
+                        <img
+                                class="social"
+                                src="images/gmail.ico"
+                                alt="Email"
+                                width="35px"
+                                height="35px"
+                        />
+                    </a>
+                    <a href="https://github.com/JustHoward0807" target="_blank">
+                        <img
+                                class="social"
+                                src="images/github-mark-white.svg"
+                                alt="Github"
+                                width="35px"
+                                height="35px"
+                        />
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="secondPage" class="child">
+        <section id="techStackBox">
+            <div id="topTechStackBox">
+                <h1>Tech Stack</h1>
+            </div>
+
+            <div id="bottomTechStackBox">
+                <ul id="techStackUl">
+                    <li class="techStackLi" title="Java"><img src="images/icons8-java.svg" width="40px" height="40px"
+                                                              alt="Java Icon"/></li>
+                    <li class="techStackLi" title="HTML"><img src="images/html-1.svg" width="40px" height="40px"
+                                                              alt="HTML Icon"/></li>
+                    <li class="techStackLi" title="CSS"><img src="images/css-3.svg" width="40px" height="40px"
+                                                             alt="CSS Icon"/></li>
+                    <li class="techStackLi" title="Javascript"><img src="images/javascript-1.svg" width="40px"
+                                                                    height="40px" alt="Javascript Icon"/></li>
+                    <li class="techStackLi" title="Flutter"><img src="images/flutter-logo.svg" width="40px"
+                                                                 height="40px" alt="Flutter Icon"/></li>
+                    <li class="techStackLi" title="Dart"><img src="images/dart.svg" width="40px" height="40px"
+                                                              alt="Dart Icon"/></li>
+                    <li class="techStackLi" title="MySQL"><img src="images/mysql-6.svg" width="40px" height="40px"
+                                                               alt="MySQL Icon"/></li>
+                    <li class="techStackLi" title="SQLite"><img src="images/sqlite.svg" width="40px" height="40px"
+                                                                alt="SQLite Icon"/></li>
+                    <li class="techStackLi" title="C++"><img src="images/c.svg" width="40px" height="40px"
+                                                             alt="C++ Icon"/></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projectsBox">
+            <div id="topProjectsBox">
+                <h1>Projects</h1>
+            </div>
+
+            <div id="bottomProjectsBox">
+                <!--            A list of projects-->
+                <!--                <div class="projects">-->
+                <!--                    <img src="images/dart.svg" width="100px" height="100px">-->
+                <!--                    <h1 class = "projectName">MovieAddict</h1>-->
+                <!--                    <p class="description">Varius alienum conubia per indoctum per dapibus nascetur sanctus senectus. In-->
+                <!--                        definitionem enim-->
+                <!--                        vivamus laoreet. Convallis facilisis vix ad mandamus lobortis. Ignota gravida curabitur propriae-->
+                <!--                        ligula. Viderer vel tractatos ancillae has blandit molestiae.</p>-->
+
+                <!--                </div>-->
+
+                <!--                <div class="projects">-->
+                <!--                    <img src="images/dart.svg" width="100px" height="100px">-->
+                <!--                    <p class="description">Varius alienum conubia per indoctum per dapibus nascetur sanctus senectus. In-->
+                <!--                        definitionem enim-->
+                <!--                        vivamus laoreet. Convallis facilisis vix ad mandamus lobortis. Ignota gravida curabitur propriae-->
+                <!--                        ligula. Viderer vel tractatos ancillae has blandit molestiae.</p>-->
+
+                <!--                </div>-->
+
+                <!--                <div class="projects">-->
+                <!--                    <img src="images/dart.svg" width="100px" height="100px">-->
+                <!--                    <p class="description">Varius alienum conubia per indoctum per dapibus nascetur sanctus senectus. In-->
+                <!--                        definitionem enim-->
+                <!--                        vivamus laoreet. Ccillae has blandit molestiae.</p>-->
+
+                <!--                </div>-->
+                <!--                <div class="projects">-->
+                <!--                    <img src="images/dart.svg" width="100px" height="100px">-->
+                <!--                    <p class="description">Varius alienr indoctum per dapibus nascetur sanctus senectus. In-->
+                <!--                        definitionem enim-->
+                <!--                        vivamus laoreet. Convallis facilisis vix ad mandamus lobortis. Ignota gravida curabitur propriae-->
+                <!--                        ligula. Viderer vel tractatos ancillae has blandit molestiae.</p>-->
+
+                <!--                </div>-->
+
+                <!--                <div class="projects">-->
+                <!--                    <img src="images/dart.svg" width="100px" height="100px">-->
+                <!--                    <p class="description">Varius alienum </p>-->
+
+                <!--                </div>-->
+            </div>
+
+        </section>
+
+    </div>
 
 
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>age</th>
-        <th>Country</th>
-      </tr>
-      <tr>
-        <td>Howard</td>
-        <td>24</td>
-        <td>Taiwan</td>
-      </tr>
-    </table>
-    <br>
-    <form>
-      <label for="fname">Email to subscribe: </label><br>
-      <input type="text" id="fname" name="fname"><br>
-    </form>
+</div>
 
-  </body>
+<!--Overlay for project detail-->
+<div id="modal">
+<!--    TODO: Make the banner carousel-->
+    <!--    <div class = "imgBox">-->
+    <!--&lt;!&ndash;        <img class = "bannerImg" src="images/gp-banner.png">&ndash;&gt;-->
+    <!--    </div>-->
+
+    <!--    <div class = "descriptionModal">-->
+    <!--        <div class = "introduction">-->
+    <!--            <h2 class = "introduction-h2">Introduction: </h2>-->
+    <!--            <p class = "introduction-p">-->
+    <!--                Iisque urbanitas aeque solum gloriatur dis bibendum. Nisl noluisse error posuere volumus solum dignissim.-->
+    <!--                Iisque urbanitas aeque solum gloriatur dis bibendum. Nisl noluisse error posuere volumus solum dignissim.-->
+    <!--                Iisque urbanitas aeque solum gloriatur dis bibendum. Nisl noluisse error posuere volumus solum dignissim.-->
+    <!--                Iisque urbanitas aeque solum gloriatur dis bibendum. Nisl noluisse error posuere volumus solum dignissim.-->
+    <!--                Iisque urbanitas aeque solum gloriatur dis bibendum. Nisl noluisse error posuere volumus solum dignissim.-->
+    <!--                Iisque urbanitas aeque solum gloriatur dis bibendum. Nisl noluisse error posuere volumus solum dignissim.-->
+
+    <!--            </p>-->
+    <!--        </div>-->
+
+    <!--        <div class = "tags">-->
+    <!--            <h2 class = "tags-tags">Tools:</h2>-->
+    <!--            <ul class = "tags-ul">-->
+    <!--                <li class = "tags-li">Dart</li>-->
+    <!--                <li class = "tags-li">Java</li>-->
+    <!--                <li class = "tags-li">Javascript</li>-->
+    <!--                <li class = "tags-li">Javascript</li>-->
+    <!--                <li class = "tags-li">Javascript</li>-->
+    <!--            </ul>-->
+
+    <!--            <h2 class = "tags-links-h2">Links:</h2>-->
+    <!--            <a href = "#" class = "tags-link-a">Github link</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+</div>
+<div id="overlay">
+</div>
+
+</body>
 </html>
