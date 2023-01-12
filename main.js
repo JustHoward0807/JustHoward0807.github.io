@@ -27,6 +27,11 @@ nextPage.addEventListener("click", function () {
     })
 })
 
+function emailForm() {
+    document.querySelector("#thirdPage").scrollIntoView({
+        behavior: "smooth"
+    });
+}
 function runProgram() {
     addProjects();
 }

@@ -407,3 +407,14 @@ img {
 .tags-links-h2 {
     margin-top: 10px;
 }
+
+/* -------- Third Page ----------- */
+
+#thirdPage {
+    width: 100vw;
+    height: 40%;
+    top: 200%;
+    background-color: #0e1111;
+    position: absolute;
+    overflow-y: scroll;
+}
