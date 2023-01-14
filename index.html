@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script defer src="main.js"></script>
     <script src="projects.js"></script>
+    <script src = "https://smtpjs.com/v3/smtp.js"></script>
+    <script src = "secrets.js"></script>
     <link rel="stylesheet" href="restylesheet.css"/>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet"
@@ -157,7 +159,20 @@
     </div>
 
     <div id="thirdPage" class="child">
-        Form section
+        <form id = "form" onsubmit="sendEmail(); reset(); return false;">
+            <label for="username">Name:</label><br>
+            <input type="text" id="username" name="username" required minlength="2" maxlength="10" placeholder="Your Name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required minlength="10" maxlength="64" placeholder="Your Email"><br>
+            <label for = "message" >Message: </label><br>
+            <textarea  id = "message" type = "text" for = "message" name = "message" rows="5" maxlength="1000" placeholder="Your Message" required></textarea><br>
+
+            <button id = "submit">Submit</button>
+        </form>
+
+        <div id = "other">
+            <h1>Other</h1>
+        </div>
     </div>
 </div>
 

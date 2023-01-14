@@ -32,6 +32,7 @@ function emailForm() {
         behavior: "smooth"
     });
 }
+
 function runProgram() {
     addProjects();
 }
@@ -141,6 +142,20 @@ function openProjectDetail(project) {
     modal.append(descriptionModal);
 }
 
+function sendEmail() {
+    Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: username,
+        Password: password,
+        To: username,
+        From: username,
+        Subject: "From Howard Tung's portfolio",
+        Body: "Email: " + document.getElementById("email").value + "<br>" + "Message: " + document.getElementById("message").value
+    }).then(
+        alert("Name: " + document.getElementById("username").value + "\n" + "Email: " + document.getElementById("email").value + "\n" + "Message: " + document.getElementById("message").value)
+        // message => alert(message)
+    );
+}
 
 runProgram();
 setInterval(function () {
