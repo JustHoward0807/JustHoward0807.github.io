@@ -12,9 +12,11 @@ const modal = document.getElementById("modal");
 overlay.addEventListener("click", function () {
     let imgBox = document.getElementById("imgBox");
     let descriptionModal = document.getElementById("descriptionModal");
-    if (imgBox != undefined && descriptionModal != undefined) {
+    let hintText = document.getElementById("hintText");
+    if (imgBox != undefined && descriptionModal != undefined && hintText != undefined) {
         imgBox.remove();
         descriptionModal.remove();
+        hintText.remove();
     }
     modal.classList.remove("active");
     overlay.classList.remove("active");
@@ -86,14 +88,24 @@ function addProjects() {
 
 }
 
-
+function openImage(src) {
+    window.open(src);
+}
 function openProjectDetail(project) {
     modal.classList.add("active");
     overlay.classList.add("active");
 
     const imgBox = document.createElement("div");
     imgBox.id = "imgBox";
-    imgBox.style.backgroundImage = `url(${project.imagePath})`;
+
+
+    for (const path of project.carouselImagePath) {
+        const carousel = document.createElement("img");
+        carousel.className = "carousel";
+        carousel.src = path;
+        carousel.onclick =  () => openImage(path);
+        imgBox.append(carousel);
+    }
 
     const descriptionModal = document.createElement("div");
     descriptionModal.id = "descriptionModal";
@@ -105,6 +117,7 @@ function openProjectDetail(project) {
     const introduction_p = document.createElement("p");
     introduction_p.className = "introduction-p";
     introduction_p.innerHTML = project.description;
+
     introduction.append(introduction_h2);
     introduction.append(introduction_p);
     descriptionModal.append(introduction);
@@ -114,7 +127,7 @@ function openProjectDetail(project) {
     tags.className = "tags";
     const tags_tags = document.createElement("h2");
     tags_tags.className = "tags-tags";
-    tags_tags.innerHTML = "Tools";
+    tags_tags.innerHTML = "Tags: ";
     const tags_ul = document.createElement("ul");
     tags_ul.className = "tags-ul";
     for (const tag of project.tags) {
@@ -137,8 +150,11 @@ function openProjectDetail(project) {
     tags.append(tags_link_a);
     descriptionModal.append(tags);
 
-
+    const hintText = document.createElement("p");
+    hintText.innerHTML = "Scroll or click to see the photo";
+    hintText.id = "hintText";
     modal.append(imgBox);
+    modal.append(hintText);
     modal.append(descriptionModal);
 }
 
