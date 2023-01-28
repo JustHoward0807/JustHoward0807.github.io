@@ -47,7 +47,7 @@ li {
     position: fixed;
     top: 50%;
     width: 75vw;
-    height: 90vh;
+    height: 85vh;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
@@ -75,37 +75,8 @@ button {
 /* -------- For iphone 12 pro ----------- */
 @media (max-width: 390px) {
     /* -------- First Page ----------- */
-    .firstPage-Project {
-        font-size: 17px;
-    }
     #nextPage {
-        color: pink;
-        font-size: 18px;
-        font-weight: bold;
-        top: 93%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
-        text-align: center;
-        cursor: pointer;
-        transition: 200ms ease-in-out;
-    }
-
-    #nextPage:hover {
-        transform: translate(-50%, -100%);
-
-    }
-
-    .material-symbols-rounded {
-        /*color: pink;*/
-        font-variation-settings: 'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 156
-    }
-
-    .material-icons.md-36 {
-        font-size: 30px;
+        display: none;
     }
 
     #leftBox {
@@ -117,16 +88,16 @@ button {
     }
 
     #firstPageBox {
+
         /*background-color: red;*/
-        width: 70vw;
-        height: 80vh;
+        width: 100vw;
+        height: 100vh;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        align-items: center;
-        display: block;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
+        /*top: 45%;*/
+        /*left: 50%;*/
+        /*padding: auto;*/
+        /*display: block;*/
+
     }
 
     .profile_pic {
@@ -138,6 +109,7 @@ button {
         width: 150px;
         height: 150px;
         border-radius: 50%;
+        margin-top: 30%;
     }
 
     .profile_pic:hover {
@@ -174,9 +146,9 @@ button {
     }
 
     #hello_world {
+        margin: 0 10px 20px 10px;
         width: fit-content;
-        margin-bottom: 20px;
-        font-size: 28px;
+        font-size: 30px;
         line-height: 125%;
     }
 
@@ -187,7 +159,8 @@ button {
     }
 
     #self-introduction {
-        font-size: 20px;
+        margin: 0 10px 0 10px;
+        font-size: 22px;
         line-height: 150%;
         font-weight: 300;
     }
@@ -292,12 +265,12 @@ button {
         position: relative;
         display: flex;
         max-width: 85vw;
-        margin: auto;
+        margin: 0 auto 20px auto;
         height: 60vh;
         overflow: hidden;
         overflow-y: scroll;
         justify-content: space-evenly;
-        /*background-color: pink;*/
+        background-color: pink;
         flex-wrap: wrap;
         scroll-behavior: smooth;
     }
