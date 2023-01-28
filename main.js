@@ -76,6 +76,7 @@ function addProjects() {
         p.innerHTML = pj.description;
         projectName.innerHTML = pj.title;
         img.src = pj.imagePath;
+        img.className = "projectImage";
         // img.width = 90;
         img.height = 100;
         img.alt = pj.title;

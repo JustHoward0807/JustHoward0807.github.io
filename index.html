@@ -18,7 +18,7 @@
 <div id="container">
     <div id="firstPage" class="child">
         <div id="nextPage">
-            <p>Projects</p>
+            <p class = "firstPage-Project">Projects</p>
             <span class="material-symbols-rounded material-icons md-36">
             keyboard_double_arrow_down
             </span>
@@ -30,11 +30,13 @@
                 <!-- <img class="profile_pic" src="" alt="Me"/> -->
                 <button class="resume" onclick="openResume()">Resume</button>
             </div>
+
+
             <div id="rightBox">
                 <!-- For the title hello world -->
                 <h1 id="hello_world"><span id="hello">Hello</span> World!</h1>
                 <!-- The introduction -->
-                <p id="introduction">
+                <p id="self-introduction">
                     I’m Howard Tung. A software developer from Taiwan. I like to design
                     and making creative, innovative, and unique projects. Feel free to
                     contact me if you have any questions.
@@ -83,23 +85,23 @@
 
             <div id="bottomTechStackBox">
                 <ul id="techStackUl">
-                    <li class="techStackLi" title="Java"><img src="images/icons8-java.svg" width="40px" height="40px"
+                    <li class="techStackLi" title="Java"><img class = "techStackLiImg" src="images/icons8-java.svg" width="40px" height="40px"
                                                               alt="Java Icon"/></li>
-                    <li class="techStackLi" title="HTML"><img src="images/html-1.svg" width="40px" height="40px"
+                    <li class="techStackLi" title="HTML"><img class = "techStackLiImg" src="images/html-1.svg" width="40px" height="40px"
                                                               alt="HTML Icon"/></li>
-                    <li class="techStackLi" title="CSS"><img src="images/css-3.svg" width="40px" height="40px"
+                    <li class="techStackLi" title="CSS"><img class = "techStackLiImg" src="images/css-3.svg" width="40px" height="40px"
                                                              alt="CSS Icon"/></li>
-                    <li class="techStackLi" title="Javascript"><img src="images/javascript-1.svg" width="40px"
+                    <li class="techStackLi" title="Javascript"><img class = "techStackLiImg" src="images/javascript-1.svg" width="40px"
                                                                     height="40px" alt="Javascript Icon"/></li>
-                    <li class="techStackLi" title="Flutter"><img src="images/flutter-logo.svg" width="40px"
+                    <li class="techStackLi" title="Flutter"><img class = "techStackLiImg" src="images/flutter-logo.svg" width="40px"
                                                                  height="40px" alt="Flutter Icon"/></li>
-                    <li class="techStackLi" title="Dart"><img src="images/dart.svg" width="40px" height="40px"
+                    <li class="techStackLi" title="Dart"><img class = "techStackLiImg" src="images/dart.svg" width="40px" height="40px"
                                                               alt="Dart Icon"/></li>
-                    <li class="techStackLi" title="MySQL"><img src="images/mysql-6.svg" width="40px" height="40px"
+                    <li class="techStackLi" title="MySQL"><img class = "techStackLiImg" src="images/mysql-6.svg" width="40px" height="40px"
                                                                alt="MySQL Icon"/></li>
-                    <li class="techStackLi" title="SQLite"><img src="images/sqlite.svg" width="40px" height="40px"
+                    <li class="techStackLi" title="SQLite"><img class = "techStackLiImg" src="images/sqlite.svg" width="40px" height="40px"
                                                                 alt="SQLite Icon"/></li>
-                    <li class="techStackLi" title="C++"><img src="images/c.svg" width="40px" height="40px"
+                    <li class="techStackLi" title="C++"><img class = "techStackLiImg" src="images/c.svg" width="40px" height="40px"
                                                              alt="C++ Icon"/></li>
                 </ul>
             </div>
@@ -173,7 +175,7 @@
         <div id = "footer">
             <a class = "footer-contact" href="mailto:howardong0807@gmail.com">howardong0807@gmail.com</a>
             <a class = "footer-contact" href="tel:+13854396222">(+1) 385-439-6222</a>
-            <p style="margin-top: 10px">Designed & Built by <span style = "font-style: italic; ">Howard Tung</span></p>
+            <p class = "footer-signature">Designed & Built by <span style = "font-style: italic; ">Howard Tung</span></p>
         </div>
     </div>
 </div>
@@ -181,7 +183,7 @@
 
 <!--Overlay for project detail-->
 <div id="modal">
-    <!--    TODO: Make the banner carousel-->
+
 <!--        <div class = "imgBox">-->
 <!--    &lt;!&ndash;        <img class = "bannerImg" src="images/gp-banner.png">&ndash;&gt;-->
 <!--        </div>-->
