@@ -73,7 +73,7 @@ function addProjects() {
         const projectName = document.createElement("h1");
         projectName.className = "projectName";
         p.className = "description";
-        p.innerHTML = pj.description;
+        p.innerHTML = pj.shortDescription;
         projectName.innerHTML = pj.title;
         img.src = pj.imagePath;
         img.className = "projectImage";
@@ -92,6 +92,7 @@ function addProjects() {
 function openImage(src) {
     window.open(src);
 }
+
 function openProjectDetail(project) {
     modal.classList.add("active");
     overlay.classList.add("active");
@@ -104,7 +105,7 @@ function openProjectDetail(project) {
         const carousel = document.createElement("img");
         carousel.className = "carousel";
         carousel.src = path;
-        carousel.onclick =  () => openImage(path);
+        carousel.onclick = () => openImage(path);
         imgBox.append(carousel);
     }
 

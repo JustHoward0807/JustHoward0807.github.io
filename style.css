@@ -47,7 +47,7 @@ li {
     position: fixed;
     top: 50%;
     width: 75vw;
-    height: 85vh;
+    height: 80vh;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
@@ -109,7 +109,7 @@ button {
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        margin-top: 30%;
+        margin-top: 20%;
     }
 
     .profile_pic:hover {
@@ -119,7 +119,7 @@ button {
     }
 
     .resume {
-        margin-bottom:20px;
+        margin-bottom: 20px;
         width: 130px;
         height: 50px;
         margin-top: 20px;
@@ -186,7 +186,6 @@ button {
     }
 
 
-
     /* -------- Second Page ----------- */
     #secondPage {
         background-color: #353839;
@@ -244,10 +243,12 @@ button {
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
+
     .techStackLiImg {
         width: 30px;
         height: 30px;
     }
+
     .techStackLi {
         color: white;
         padding: 16px;
@@ -270,7 +271,7 @@ button {
         overflow: hidden;
         overflow-y: scroll;
         justify-content: space-evenly;
-        background-color: pink;
+        /*background-color: pink;*/
         flex-wrap: wrap;
         scroll-behavior: smooth;
     }
@@ -293,9 +294,9 @@ button {
 
 
     .description {
-        text-align: justify-all;
+        text-align: start;
         margin-top: 10px;
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .projectName {
@@ -303,7 +304,7 @@ button {
         font-size: 12px;
     }
 
-    .projectImage{
+    .projectImage {
         width: 100%;
         object-fit: cover;
     }
@@ -373,10 +374,11 @@ button {
     }
 
     .introduction-p {
-        line-height: 1.4em;
+        line-height: 1.5em;
         font-size: 16px;
         padding: 10px;
         flex: 1;
+        word-break: break-word;
     }
 
 
@@ -481,6 +483,7 @@ button {
     .footer-contact:hover {
         color: red;
     }
+
     .footer-signature {
         margin-top: 10px;
         color: grey;
@@ -685,9 +688,7 @@ button {
     /*    list-style-type: none;*/
     /*    margin: 0;*/
     /*    padding: 0;*/
-
     /*}*/
-
     .techStackLi {
         display: inline-block;
         color: white;
@@ -873,6 +874,7 @@ button {
         position: absolute;
         overflow: clip;
     }
+
     /* -------- Third Page ----------- */
     #form {
 
