@@ -194,16 +194,20 @@ button {
     }
 
     #techStackBox {
+        margin-top: 30px;
         /*background-color: yellow;*/
         width: 100vw;
-        height: 30vh;
+        height: 20vh;
         overflow: hidden;
 
     }
 
+    #topTechStackBox {
+        display: none;
+    }
     #topTechStackBox, #topProjectsBox {
         position: relative;
-        top: 15%;
+        /*top: 10%;*/
         left: 50%;
         width: 25vw;
         margin-right: -50%;
@@ -271,7 +275,7 @@ button {
         overflow: hidden;
         overflow-y: scroll;
         justify-content: space-evenly;
-        background-color: pink;
+        /*background-color: pink;*/
         flex-wrap: wrap;
         scroll-behavior: smooth;
     }
@@ -296,7 +300,7 @@ button {
     .description {
         text-align: start;
         margin-top: 10px;
-        font-size: 8px;
+        font-size: 10px;
     }
 
     .projectName {
