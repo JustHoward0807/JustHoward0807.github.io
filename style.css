@@ -109,7 +109,7 @@ button {
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        margin-top: 20%;
+        margin-top: 10%;
     }
 
     .profile_pic:hover {
@@ -266,12 +266,12 @@ button {
         position: relative;
         display: flex;
         max-width: 85vw;
-        margin: 0 auto 20px auto;
-        height: 60vh;
+        margin: 0 auto 0px auto;
+        height: 50vh;
         overflow: hidden;
         overflow-y: scroll;
         justify-content: space-evenly;
-        /*background-color: pink;*/
+        background-color: pink;
         flex-wrap: wrap;
         scroll-behavior: smooth;
     }
