@@ -1,0 +1,121 @@
+/* -------- For desktop ----------- */
+@media (min-width: 391px) {
+  /* -------- First Page ----------- */
+  /* #nextPage {
+    color: pink;
+    font-size: 18px;
+    font-weight: bold;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+  }
+
+  #nextPage:hover {
+    transform: translate(-50%, -100%);
+  } */
+
+  /* .material-symbols-rounded {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 156;
+  } */
+
+  /* .material-icons.md-36 {
+    font-size: 36px;
+  } */
+
+  #leftBox {
+    inline-size: min-content;
+  }
+
+  #firstPageBox {
+    /* background-color: red; */
+    width: 70vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    display: inline-flex;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .profile_pic {
+    background: url("/public/images/me.jpg") no-repeat;
+    background-size: 200px;
+    background-position: -22px;
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    margin-left: 50%;
+    transform: translate(-56%);
+  }
+
+  .profile_pic:hover {
+    background: url("/public/images/profile.JPG") no-repeat;
+    background-size: cover;
+    background-position: -22px;
+  }
+
+  .resume {
+    display: block;
+    width: 130px;
+    height: 50px;
+    margin-top: 20px;
+    background-color: #cc0000 !important;
+    border-radius: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 4px 4px #00000040;
+    font-size: 20px;
+    font-weight: 450;
+    transition: all 0.3s ease 0s;
+  }
+
+  .resume:hover {
+    background-color: whitesmoke !important;
+    color: black !important;
+    transform: translateY(-7px);
+  }
+
+  #rightBox {
+    margin-left: 50px;
+  }
+
+  #hello_world {
+    margin-bottom: 25px;
+    font-size: 40px;
+  }
+
+  #hello {
+    border-bottom: 3px solid red;
+    color: pink;
+    transition: color 0.5s ease-in-out;
+  }
+
+  #self-introduction {
+    font-size: 28px;
+    line-height: 150%;
+    font-weight: 300;
+  }
+
+  #socialAPP {
+    border-radius: 15px;
+    display: flex;
+    background-color: #414a4c;
+    width: 236px;
+    height: 60px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 4px 4px #00000040;
+  }
+
+  .social {
+    cursor: pointer;
+  }
+}
