@@ -19,11 +19,19 @@ button {
   color: white !important;
 }
 
-#container {
+#homeContainer {
+  /* position: relative; */
   position: absolute;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  /* display: flex;
+  flex-direction: column; */
+  /* height: fit-content;
+  position: absolute;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; */
 }
+
 .child {
   width: 100vw;
   height: 100vh;

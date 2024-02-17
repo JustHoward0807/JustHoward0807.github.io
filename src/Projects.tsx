@@ -1,7 +1,7 @@
 import React from 'react';
 import { ListGroup, Image, Stack, Badge, Carousel, Card } from 'react-bootstrap';
 import { projects } from './Models/Project.tsx';
-
+import Works from './Works.tsx';
 
 function Projects() {
     return (
@@ -134,8 +134,8 @@ function populateProjects() {
                         .sort((a, b) => b.year.getTime() - a.year.getTime())
                         .map((project, index) => (
                             <div key={index} className='col'>
-                                <Card style={{ backgroundColor: "#232b2b", color: "white", height: "20em", overflow: "scroll" }} >
-                                    <Card.Body>
+                                <Card style={{ backgroundColor: "#232b2b", color: "white", height: "20em" }} >
+                                    <Card.Body className='overflow-auto'>
                                         <Card.Title>{project.title}</Card.Title>
                                         <Card.Link href={project.githubLink} target='_blank'>
 
@@ -149,7 +149,7 @@ function populateProjects() {
                                         </Card.Link>
                                         <Card.Text dangerouslySetInnerHTML={{ __html: project.description }} style={{ opacity: "90%" }} />
                                     </Card.Body>
-                                    <footer className="blockquote-footer mt-0">
+                                    <footer className="blockquote-footer mt-1">
                                         {project.tags.join(", ")}
                                     </footer>
                                     <Card.Footer className="text-light">{project.year.toLocaleString('en-US', { year: 'numeric', month: 'long' })}</Card.Footer>
@@ -159,6 +159,8 @@ function populateProjects() {
                 </div>
             </div>
 
+
+            <Works />
 
 
 

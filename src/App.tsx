@@ -4,19 +4,29 @@ import Home from './Home.tsx';
 import Projects from './Projects.tsx';
 import './Home.css';
 import './Projects.css';
+import './Works.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <>
-      <div id="container">
-        <div id="firstPage" className="child">
+      <div id="homeContainer">
+        <div className="child">
           <Home />
         </div>
 
         <div id="secondPage" className="child">
           <Projects />
         </div>
+
+        {/* <div id="thirdPage" className="child">
+          <Works />
+        </div> */}
+
+
+
+
       </div>
     </>
 
