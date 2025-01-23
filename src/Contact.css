@@ -1,0 +1,26 @@
+.contactSection {
+  width: 100vw;
+  height: 100vh;
+}
+
+.contactText {
+  font-family: "Anonymous Pro";
+  transition: all 0.2s ease-in-out 0s;
+  opacity: 60%;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.contactText:hover {
+  opacity: 100%;
+}
+
+.contactBtn {
+  font-family: "Anonymous Pro" !important;
+  transition: all 0.2s ease-in-out 0s;
+  border-color: #cc0000;
+}
+.contactBtn:hover {
+  border-color: #cc0000;
+  background-color: #2c3535 !important;
+}

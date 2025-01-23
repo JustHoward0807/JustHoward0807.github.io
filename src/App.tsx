@@ -4,9 +4,9 @@ import Home from './Home.tsx';
 import Projects from './Projects.tsx';
 import './Home.css';
 import './Projects.css';
-import './Works.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './Works.css'
+import Contact from './Contact.tsx';
 
 function App() {
   return (
@@ -18,16 +18,14 @@ function App() {
 
         <div id="secondPage" className="child">
           <Projects />
+          <Contact />
         </div>
-
-        {/* <div id="thirdPage" className="child">
-          <Works />
-        </div> */}
 
 
 
 
       </div>
+
     </>
 
   );

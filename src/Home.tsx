@@ -41,7 +41,7 @@ function Home() {
             <section id="firstPageBox">
                 <div id="leftBox">
                     <div className="profile_pic"></div>
-                    <button className="resume fw-bold" onClick={() => window.open("/Howard_Tung_2024_Resume.pdf", "_blank")} >Resume</button>
+                    <button className="resume fw-bold" onClick={() => window.open("/Howard_Tung_2025_Resume.pdf", "_blank")} >Resume</button>
                 </div>
 
 

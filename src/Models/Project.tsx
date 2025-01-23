@@ -31,7 +31,7 @@ const projects: Project[] = [
         ["Java", "Coursework", "BFS"],
         "https://github.com/JustHoward0807/Pacman-BFS-Pathfinder",
         ["/public/images/pacman pathfinding result.png", "/public/images/outputQ.png", "/public/images/outputSol.png"],
-        new Date(2023, 7),
+        new Date(2022, 12),
         false
     ),
 
@@ -110,6 +110,18 @@ const projects: Project[] = [
         ["images/pccu-passport-before.png", "images/pccu-passport-after.png", "images/pccu-passport-firebase.png"],
         new Date(2020, 12),
         false
+    ),
+
+    new Project("UBetterSurplus",
+        "This repository contains the source code for a dynamic and efficient Web Application developed using React, JavaScript, C#, Entity Framework Core, and ASP.NET Core. The application features a user interface crafted through Figma and Fluent UI Design principles.",
+        "This repository contains the source code for a dynamic and efficient Web Application developed using React, JavaScript, C#, Entity Framework Core, and ASP.NET Core. The application features a user interface crafted through Figma and Fluent UI Design principles.<br><br>" +
+        "As an international student, we often need to buy cheap stuff such as furniture, monitor or a desk. University of Utah Surplus Store is typically the first place that comes to mind for such purchases. However, the store relies on a PDF file to update customers about the current availability and timing of items. The way it displays the items is a HUGE pain; hence, I created this website to better showcase the items from that PDF file through data visualization and improved search filters.",
+        "images/Capstone-Home.png",
+        ["C#", "React", "MySQL", "ASP.NET Core", "Self-taught", "Capstone Project", "EF Core", "Figma", "JavaScript"],
+        "https://github.com/JustHoward0807/UBetterSurplus",
+        ["images/Capstone-Home.png", "images/Capstone-About.png", "images/Capstone-History.png", "images/Capstone-Tracked.png"],
+        new Date(new Date().getFullYear(), new Date().getMonth()),
+        true
     ),
 
 
