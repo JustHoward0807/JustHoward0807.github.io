@@ -5,8 +5,6 @@ function Home() {
     const el = React.useRef(null);
     const [greetingColor, setGreetingColor] = useState<string>("");
 
-
-
     useEffect(() => {
         // TODO: Provide more language
         let greetingLanguage: string[] = ["Hello", "你好", "안녕하세요", "Hallo", "Xin chào", "Hola", "Hej", "Halló", "Dia dhuit", "Salve", "Kamusta", "Bonjour", "Aloha", "Γειά σου", "привет", "Buna ziua"];
@@ -28,7 +26,6 @@ function Home() {
 
             // TODO: Change the interval time
         }, 5000);
-
 
         return () => {
             clearInterval(intervalId);
@@ -101,7 +98,6 @@ function Home() {
                     </div>
                 </div>
             </section>
-
         </>
     );
 }

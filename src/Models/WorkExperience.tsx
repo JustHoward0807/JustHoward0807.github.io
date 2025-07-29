@@ -9,11 +9,24 @@ interface WorkExperience {
 
 const workExperiences: WorkExperience[] = [
     {
+        id: "co-diagnostic",
+        company: "Co-Diagnostics, Inc",
+        companyUrl: "https://codiagnostics.com/",
+        title: "Software Engineer",
+        period: "June 2024 - Present",
+        description: [
+            "Developed and maintained software solutions for molecular diagnostic instruments and laboratory information systems.",
+            "Collaborated with cross-functional teams to implement new features and improve existing applications in the healthcare technology sector.",
+            "Gained hands-on experience with software development lifecycle in a professional environment, contributing to products that impact medical diagnostics."
+        ]
+    },
+
+    {
         id: "marriott-library",
         company: "J. Willard Marriott Library",
         companyUrl: "https://lib.utah.edu/",
         title: "Web Developer & User Experience Assistant",
-        period: "June 2023 - Present",
+        period: "June 2023 - May 2024",
         description: [
             "Proficiently resolve website-related issues reported by library employees using Jira project management software. This includes adding elements and editing pages, utilizing WordPress and Omni CMS.",
             "Implement custom PHP functions to enhance website functionality, resulting in improved user interactions and efficiency.",
