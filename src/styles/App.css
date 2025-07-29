@@ -39,6 +39,13 @@ button {
   scroll-snap-align: start;
 }
 
+/* Mobile-specific scroll-snap fix */
+@media (max-width: 768px) {
+  #homeContainer {
+    scroll-snap-type: y proximity;
+  }
+}
+
 .App {
   text-align: center;
   position: relative;

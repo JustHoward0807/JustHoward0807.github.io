@@ -1,33 +1,27 @@
-import './App.css';
+import './styles/App.css';
 import React from 'react';
-import Home from './Home.tsx';
-import Projects from './Projects.tsx';
-import './Home.css';
-import './Projects.css';
+import Home from './features/home/Home.tsx';
+import Projects from './features/projects/Projects.tsx';
+import './features/home/Home.css';
+import './features/projects/Projects.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Works.css'
-import Contact from './Contact.tsx';
+import './features/works/Works.css'
+import Contact from './features/contact/Contact.tsx';
 
 function App() {
   return (
     <>
-      <div id="homeContainer">
-        <div className="child">
+      <main id="homeContainer">
+        <section className="child">
           <Home />
-        </div>
+        </section>
 
-        <div id="secondPage" className="child">
+        <section id="secondPage" className="child">
           <Projects />
           <Contact />
-        </div>
-
-
-
-
-      </div>
-
+        </section>
+      </main>
     </>
-
   );
 }
 

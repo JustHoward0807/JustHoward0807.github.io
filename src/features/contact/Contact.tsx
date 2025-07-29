@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import '../src/Contact.css';
+import './Contact.css';
 import Typed from 'typed.js';
 import Button from 'react-bootstrap/Button';
 

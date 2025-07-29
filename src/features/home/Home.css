@@ -20,7 +20,6 @@
   }
 
   .profile_pic {
-    background: url("/public/images/me.jpg") no-repeat;
     background-size: 200px;
     background-position: -22px;
     /*display: block;*/
@@ -31,7 +30,6 @@
   }
 
   .profile_pic:hover {
-    background: url("/public/images/profile.JPG") no-repeat;
     background-size: cover;
     background-position: -22px;
   }
@@ -123,7 +121,6 @@
   }
 
   .profile_pic {
-    background: url("/public/images/me.jpg") no-repeat;
     background-size: 200px;
     background-position: -22px;
     display: block;
@@ -135,7 +132,6 @@
   }
 
   .profile_pic:hover {
-    background: url("/public/images/profile.JPG") no-repeat;
     background-size: cover;
     background-position: -22px;
   }

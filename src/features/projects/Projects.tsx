@@ -1,20 +1,19 @@
 import React from 'react';
-import { ListGroup, Image, Stack, Badge, Carousel, Card } from 'react-bootstrap';
-import { projects } from './Models/Project.tsx';
-import Works from './Works.tsx';
+import { Image, Stack, Badge, Carousel, Card } from 'react-bootstrap';
+import { projects } from '../../models/Project.tsx';
+import Works from '../works/Works.tsx';
+import './Projects.css';
 
 function Projects() {
     return (
         <>
-            <section className="d-flex flex-column align-items-center justify-content-center" style={{ "height": "fit-content" }}>
-
-                {/* <div className='topTechStackBox mt-4 mb-4 text-center' style={{ "width": "30vw" }}>
-                    FEATURED PROJECTS */}
-                {/* <span className='fs-3'>TECH STACK</span> */}
+            {/* NOTE: Dislike the tech stack section */}
+            {/* <section className="d-flex flex-column align-items-center justify-content-center" style={{ "height": "fit-content" }}>
+                
                 <span className=' mt-5 mb-4 text-center sectionTitle'>
                     TECH STACK
                 </span>
-                {/* </div> */}
+
                 <div id="bottomTechStackBox" className='ms-3 me-3 ' style={{}}>
                     <ListGroup className="d-flex flex-row flex-wrap justify-content-evenly">
                         <ListGroup.Item title="Java" className="flex-grow-0"><img src="images/icons8-java.svg" width="40px" height="40px" alt="Java Icon" /></ListGroup.Item>
@@ -30,7 +29,7 @@ function Projects() {
                 </div>
 
 
-            </section>
+            </section> */}
 
             <section className="d-flex flex-column align-items-center justify-content-center" style={{ "height": "fit-content" }}>
                 {/* <div className='topTechStackBox mt-5 mb-4 text-center' style={{ "width": "30vw" }}> */}
@@ -110,13 +109,12 @@ function populateProjects() {
                                     ))}
 
                                 </Stack>
-                                <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className='mt-1 pe-1 align-self-end github' style={{ textDecoration: 'none' }}>
+                                <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className='mt-1 pe-1 align-self-end github' style={{ textDecoration: 'none' }} aria-label={`View ${project.title} on GitHub`}>
                                     <Image
                                         src="images/github-mark-white.svg"
                                         alt="Github"
                                         width={"25px"}
                                         className='github'
-
                                     />
                                 </a>
                             </div>
@@ -145,7 +143,7 @@ function populateProjects() {
                                     <Card style={{ backgroundColor: "#232b2b", color: "white", height: "20em" }} onClick={() => window.open(project.githubLink)}>
                                         <Card.Body className='overflow-auto'>
                                             <Card.Title>{project.title}</Card.Title>
-                                            <Card.Link href={project.githubLink} target='_blank'>
+                                            <Card.Link href={project.githubLink} target='_blank' aria-label={`View ${project.title} on GitHub`}>
 
                                                 <Image
                                                     src="images/github-mark-white.svg"

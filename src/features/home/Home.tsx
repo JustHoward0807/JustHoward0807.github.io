@@ -40,8 +40,20 @@ function Home() {
         <>
             <section id="firstPageBox">
                 <div id="leftBox">
-                    <div className="profile_pic"></div>
-                    <button className="resume fw-bold" onClick={() => window.open("/Howard_Tung_2025_Resume.pdf", "_blank")} >Resume</button>
+                    <div 
+                        className="profile_pic" 
+                        style={{
+                            backgroundImage: `url(${process.env.PUBLIC_URL}/images/me.jpg)`,
+                            backgroundRepeat: 'no-repeat'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundImage = `url(${process.env.PUBLIC_URL}/images/profile.JPG)`;
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundImage = `url(${process.env.PUBLIC_URL}/images/me.jpg)`;
+                        }}
+                    ></div>
+                    <button className="resume fw-bold" onClick={() => window.open("/Lung_Hao_Tung_2025_Resume.pdf", "_blank")} >Resume</button>
                 </div>
 
 
@@ -58,17 +70,17 @@ function Home() {
                     {/* <!-- Icon to social media (LinkedIn, Github, Mail) --> */}
                     {/* <!--      Distributed evenly      --> */}
                     <div id="socialAPP">
-                        <a href="https://www.linkedin.com/in/justhoward0807/" rel="noreferrer" target="_blank">
+                        <a href="https://www.linkedin.com/in/justhoward0807/" rel="noreferrer" target="_blank" aria-label="Visit Howard's LinkedIn profile">
                             <img
                                 className="social"
                                 src="images/linkedin-icon-2.svg"
                                 alt="LinkedIn"
                                 height="35px"
                                 width="35px"
-
-                            /></a>
+                            />
+                        </a>
                         {/* <!-- Jump to email me section --> */}
-                        <a href="mailto:howardongdev0807@gmail.com" rel="noreferrer" target="_blank">
+                        <a href="mailto:howardongdev0807@gmail.com" rel="noreferrer" target="_blank" aria-label="Send email to Howard">
                             <img
                                 className="social"
                                 src="images/gmail.ico"
@@ -77,7 +89,7 @@ function Home() {
                                 height="35px"
                             />
                         </a>
-                        <a href="https://github.com/JustHoward0807" rel="noreferrer" target="_blank">
+                        <a href="https://github.com/JustHoward0807" rel="noreferrer" target="_blank" aria-label="Visit Howard's GitHub profile">
                             <img
                                 className="social"
                                 src="images/github-mark-white.svg"
