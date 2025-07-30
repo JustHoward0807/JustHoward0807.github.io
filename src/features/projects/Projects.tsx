@@ -1,10 +1,60 @@
-import React from 'react';
-import { Image, Stack, Badge, Carousel, Card } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react';
+import { Image, Stack, Badge, Carousel, Card, Modal } from 'react-bootstrap';
 import { projects } from '../../models/Project.tsx';
 import Works from '../works/Works.tsx';
 import './Projects.css';
 
 function Projects() {
+    const [showModal, setShowModal] = useState(false);
+    const [modalImage, setModalImage] = useState('');
+    const [animateProjects, setAnimateProjects] = useState(false);
+    const projectsRef = useRef<HTMLDivElement>(null);
+
+    const handleImageClick = (imageSrc: string) => {
+        setModalImage(imageSrc);
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setModalImage('');
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        console.log('Projects section is in view, triggering animation');
+                        setAnimateProjects(true);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            }
+        );
+
+        const currentRef = projectsRef.current;
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
+
+        // Fallback: trigger animation after 2 seconds if intersection observer doesn't work
+        const fallbackTimer = setTimeout(() => {
+            console.log('Fallback animation trigger');
+            setAnimateProjects(true);
+        }, 2000);
+
+        return () => {
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+            clearTimeout(fallbackTimer);
+        };
+    }, []);
     return (
         <>
             {/* NOTE: Dislike the tech stack section */}
@@ -39,8 +89,8 @@ function Projects() {
                 </span>
                 {/* </div> */}
 
-                <div id="bottomProjectsBox">
-                    {populateProjects()}
+                <div id="bottomProjectsBox" ref={projectsRef}>
+                    {populateProjects(handleImageClick, animateProjects)}
                 </div>
 
             </section>
@@ -54,12 +104,22 @@ function Projects() {
 
                 <Works />
             </section>
+
+            {/* Image Modal */}
+            <Modal show={showModal} onHide={handleCloseModal} size="lg" centered>
+                <Modal.Header closeButton style={{ backgroundColor: '#1e1e1e', borderColor: '#444' }}>
+                    <Modal.Title style={{ color: '#fff' }}>Project Image</Modal.Title>
+                </Modal.Header>
+                <Modal.Body style={{ backgroundColor: '#1e1e1e', padding: '0' }}>
+                    <Image src={modalImage} alt="Enlarged project image" fluid style={{ width: '100%', height: 'auto' }} />
+                </Modal.Body>
+            </Modal>
         </>
 
     );
 }
 
-function populateProjects() {
+function populateProjects(handleImageClick: (imageSrc: string) => void, animateProjects: boolean) {
 
     return (
         <>
@@ -69,9 +129,13 @@ function populateProjects() {
                     .map((project, index) => (
 
 
-                        <div key={index} className={`d-flex justify-content-between projects ${index % 2 !== 0 ? 'flex-row-reverse' : ''} vw-100 ps-4 pe-4 mb-4`} >
+                        <div key={index} className={`d-flex justify-content-between projects ${animateProjects ? 'animate-in' : ''} ${index % 2 !== 0 ? 'flex-row-reverse' : ''} vw-100 ps-4 pe-4 mb-4`} style={{ '--animation-order': index } as React.CSSProperties}>
+                            {(() => {
+                                console.log(`Project ${index}: animateProjects=${animateProjects}, className includes animate-in: ${animateProjects ? 'YES' : 'NO'}`);
+                                return null;
+                            })()}
 
-                            <Carousel key={index} className="imageBox rounded mt-3" slide={false} fade interval={null} style={{ width: "47vw", height: "40vh" }}>
+                            <Carousel key={index} className="imageBox rounded mt-3" slide={true} fade={false} interval={null} style={{ width: "47vw", height: "40vh" }}>
                                 {project.carouselImagePath.map((image, index) => (
 
                                     <Carousel.Item key={index} style={{ width: "47vw", height: "40vh" }}>
@@ -80,7 +144,9 @@ function populateProjects() {
                                             key={index}
                                             src={image}
                                             fluid
-                                            style={{ position: "relative", zIndex: "1", width: '100%', height: '100%', objectFit: 'contain' }}
+                                            style={{ position: "relative", zIndex: "1", width: '100%', height: '100%', objectFit: 'contain', cursor: 'pointer' }}
+                                            onClick={() => handleImageClick(image)}
+                                            alt={`${project.title} screenshot ${index + 1}`}
                                         />
                                     </Carousel.Item>
                                 ))}
@@ -98,25 +164,26 @@ function populateProjects() {
 
 
 
-                            <div className={`rounded mt-3 d-flex flex-column justify-content-around p-1 featuredDescription`} style={{ "width": "47vw", "height": "40vh" }}>
-                                <h3>{project.title}</h3>
-                                <p className='h-auto flex-grow-1 featuredDescription' dangerouslySetInnerHTML={{ __html: project.description }}></p>
-                                <Stack direction='horizontal' gap={2}>
+                            <div className={`rounded mt-3 d-flex flex-column p-1 featuredDescription`} style={{ "width": "47vw", "height": "40vh" }}>
+                                <div className="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 className="mb-0">{project.title}</h3>
+                                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className='github-link' style={{ textDecoration: 'none' }} aria-label={`View ${project.title} on GitHub`}>
+                                        <Image
+                                            src="images/github-mark-white.svg"
+                                            alt="Github"
+                                            width={"25px"}
+                                            className='github'
+                                        />
+                                    </a>
+                                </div>
+                                <p className='flex-grow-1 featuredDescription mb-2' dangerouslySetInnerHTML={{ __html: project.description }}></p>
+                                <Stack direction='horizontal' gap={2} className="flex-wrap">
                                     {project.tags.map((tag, index) => (
                                         <Badge key={index} bg="info">
                                             {tag}
                                         </Badge>
                                     ))}
-
                                 </Stack>
-                                <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className='mt-1 pe-1 align-self-end github' style={{ textDecoration: 'none' }} aria-label={`View ${project.title} on GitHub`}>
-                                    <Image
-                                        src="images/github-mark-white.svg"
-                                        alt="Github"
-                                        width={"25px"}
-                                        className='github'
-                                    />
-                                </a>
                             </div>
                         </div>
 

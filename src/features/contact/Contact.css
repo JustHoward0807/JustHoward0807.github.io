@@ -4,7 +4,7 @@
 }
 
 .contactText {
-  font-family: "Anonymous Pro";
+  font-family: "JetBrains Mono";
   transition: all 0.2s ease-in-out 0s;
   opacity: 60%;
   font-size: 13px;
@@ -16,7 +16,7 @@
 }
 
 .contactBtn {
-  font-family: "Anonymous Pro" !important;
+  font-family: "JetBrains Mono" !important;
   transition: all 0.2s ease-in-out 0s;
   border-color: #cc0000;
 }

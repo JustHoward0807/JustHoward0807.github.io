@@ -76,7 +76,7 @@
 
 .badge,
 .blockquote-footer {
-  font-family: "Anonymous Pro" !important;
+  font-family: "JetBrains Mono" !important;
 }
 
 .github {
@@ -88,10 +88,17 @@
 
 .description {
   overflow-y: scroll;
+  font-family: 'Source Sans Pro', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 
 .sectionTitle {
   font-size: 30px;
+  font-family: 'Source Sans Pro', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   /* background-color: #232b2b;
   border-radius: 5px;
   box-shadow: 0 4px 4px #00000040;
@@ -118,6 +125,51 @@
   flex-wrap: wrap;
 }
 
+.github-link {
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.featuredDescription {
+  overflow: hidden;
+  font-family: 'Source Sans Pro', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+.featuredDescription p {
+  overflow-y: auto;
+  max-height: 70%;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: #e0e0e0;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #17a2b8;
+  margin-top: 8px;
+}
+
+.featuredDescription h3 {
+  font-family: 'Source Sans Pro', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid #17a2b8;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+  overflow: hidden;
+  max-height: 80px;
+  overflow-y: auto;
+  margin-top: auto !important;
+  padding: 8px;
+}
+
 .description {
   font-size: 14px;
 }
@@ -125,6 +177,153 @@
 .card:hover {
   cursor: pointer;
 }
+
+/* Image Modal Styles */
+.modal-content {
+  background-color: #1e1e1e !important;
+  border: 1px solid #444 !important;
+}
+
+.modal-header .btn-close {
+  filter: invert(1);
+}
+
+.modal-body img {
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+/* Carousel Arrow Styling */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+  opacity: 0.8;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  width: 20px !important;
+  height: 20px !important;
+  background-size: 50% 50% !important;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+}
+
+/* Carousel Animation Enhancements */
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Featured Projects Slide-in Animation */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInMobile {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.projects {
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-fill-mode: both;
+}
+
+.projects:not(.animate-in) {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.projects.animate-in:nth-child(odd) {
+  animation-name: slideInFromRight;
+  animation-delay: calc(var(--animation-order, 0) * 0.2s);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.projects.animate-in:nth-child(even) {
+  animation-name: slideInFromLeft;
+  animation-delay: calc(var(--animation-order, 0) * 0.2s);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item-next.carousel-item-start,
+.carousel-item-prev.carousel-item-end {
+  transform: translateX(0);
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-next {
+  transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-prev {
+  transform: translateX(-100%);
+}
+
+.carousel-item img {
+  transition: opacity 0.3s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.carousel-item.active img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-item:not(.active) img {
+  opacity: 0.95;
+  transform: scale(0.98);
+}
+
 @media (max-width: 800px) {
   .sectionTitle {
     font-size: 20px;
@@ -138,16 +337,33 @@
     visibility: hidden !important;
     height: 0;
   }
+  
   .projects {
     flex-direction: column !important;
     height: none;
     align-items: center;
+    /* Mobile animation properties */
+    animation-duration: 0.8s !important;
+    animation-timing-function: ease-out !important;
+    animation-fill-mode: both !important;
   }
+  
+  .projects:not(.animate-in) {
+    opacity: 0 !important;
+    transform: translateY(50px) !important;
+  }
+  
   .projects.flex-row-reverse {
     flex-direction: column !important;
     height: none;
     align-items: center;
   }
+  
+  .projects.animate-in {
+    animation-name: slideInMobile !important;
+    animation-delay: calc(var(--animation-order, 0) * 0.2s) !important;
+  }
+  
   .imageBox,
   .featuredDescription,
   .active.carousel-item {
@@ -157,6 +373,21 @@
   }
   .description {
     font-size: 12px;
+  }
+
+  /* Mobile carousel controls */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 12%;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    padding: 14px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 16px !important;
+    height: 16px !important;
+    background-size: 50% 50% !important;
   }
 
   /* .imageBox,

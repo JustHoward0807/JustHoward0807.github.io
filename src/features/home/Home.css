@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
 @media (max-width: 546px) {
   /* -------- First Page ----------- */
   #leftBox {
@@ -6,6 +8,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 2;
   }
 
   #firstPageBox {
@@ -13,10 +17,33 @@
     width: 100vw;
     height: 100vh;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 25%, #1a1a1a 50%, #2d2d2d 75%, #1a1a1a 100%);
+    background-size: 400% 400%;
+    animation: subtleGradient 20s ease-in-out infinite;
+    overflow: hidden;
+  }
+
+  #firstPageBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px, 60px 60px;
+    animation: floatingDots 30s linear infinite;
+    pointer-events: none;
   }
 
   .profile_pic {
@@ -27,11 +54,16 @@
     height: 150px;
     border-radius: 50%;
     margin-top: 10%;
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   .profile_pic:hover {
     background-size: cover;
     background-position: -22px;
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   }
 
   .resume {
@@ -48,6 +80,7 @@
     font-size: 20px;
     font-weight: 450;
     transition: all 0.3s ease 0s;
+    animation: pulse 2s ease-in-out infinite;
   }
 
   .resume:hover {
@@ -59,6 +92,8 @@
   #rightBox {
     /*background-color: red;*/
     margin: 10px;
+    position: relative;
+    z-index: 2;
   }
 
   #hello_world {
@@ -66,6 +101,7 @@
     width: fit-content;
     font-size: 30px;
     line-height: 125%;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
   }
 
   #hello {
@@ -79,6 +115,9 @@
     font-size: 22px;
     line-height: 150%;
     font-weight: 300;
+    font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+    letter-spacing: 0.01em;
+    animation: fadeInUp 1s ease-out 0.6s both;
   }
 
   #socialAPP {
@@ -87,37 +126,81 @@
     background-color: #414a4c;
     width: 230px;
     height: 50px;
-    margin-top: 20px;
+    margin: 20px auto 0 auto;
     align-items: center;
     justify-content: space-evenly;
     box-shadow: 0 4px 4px #00000040;
-    margin-left: 50%;
-    transform: translate(-50%);
+    transition: all 0.3s ease;
+    animation: slideInUp 0.8s ease-out 0.5s both;
+  }
+
+  #socialAPP:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px #00000060;
   }
 
   .social {
     width: 30px;
     height: 30px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    color: white; /* Ensures SVG icons with currentColor stroke display in white */
+  }
+
+  .social:hover {
+    transform: translateY(-3px) scale(1.1);
+    filter: brightness(1.2);
   }
 }
 /* -------- For desktop ----------- */
 @media (min-width: 546px) {
   /* -------- First Page ----------- */
   #leftBox {
-    inline-size: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
   }
 
   #firstPageBox {
     /* background-color: red; */
-    width: 70vw;
+    width: 90vw;
+    max-width: 1600px;
     position: absolute;
     top: 50%;
     left: 50%;
+    display: flex;
     align-items: center;
-    display: inline-flex;
-    margin-right: -50%;
+    justify-content: center;
     transform: translate(-50%, -50%);
+    gap: 80px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 25%, #1a1a1a 50%, #2d2d2d 75%, #1a1a1a 100%);
+    background-size: 400% 400%;
+    animation: subtleGradient 20s ease-in-out infinite;
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+
+  #firstPageBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px, 60px 60px;
+    animation: floatingDots 30s linear infinite;
+    pointer-events: none;
+    border-radius: inherit;
   }
 
   .profile_pic {
@@ -127,20 +210,24 @@
     width: 150px;
     height: 150px;
     border-radius: 5%;
-    margin-left: 50%;
-    transform: translate(-56%);
+    margin: 0 auto;
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   .profile_pic:hover {
     background-size: cover;
     background-position: -22px;
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   }
 
   .resume {
     display: block;
     width: 130px;
     height: 50px;
-    margin-top: 20px;
+    margin: 20px auto 0 auto;
     background-color: #cc0000 !important;
     border-radius: 14px;
     text-decoration: none;
@@ -150,6 +237,7 @@
     font-size: 20px;
     font-weight: 450;
     transition: all 0.3s ease 0s;
+    animation: pulse 2s ease-in-out infinite;
   }
 
   .resume:hover {
@@ -159,12 +247,20 @@
   }
 
   #rightBox {
-    margin-left: 50px;
+    flex: 2.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    max-width: 1000px;
+    position: relative;
+    z-index: 2;
   }
 
   #hello_world {
     margin-bottom: 25px;
     font-size: 40px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
   }
 
   #hello {
@@ -177,6 +273,9 @@
     font-size: 28px;
     line-height: 150%;
     font-weight: 300;
+    font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+    letter-spacing: 0.01em;
+    animation: fadeInUp 1s ease-out 0.6s both;
   }
 
   #socialAPP {
@@ -193,6 +292,13 @@
 
   .social {
     cursor: pointer;
+    transition: all 0.3s ease;
+    color: white; /* Ensures SVG icons with currentColor stroke display in white */
+  }
+
+  .social:hover {
+    transform: translateY(-5px) scale(1.15);
+    filter: brightness(1.2);
   }
 }
 
@@ -302,10 +408,178 @@
   }
 }
 
+/* Floating animation for profile picture */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Mobile-optimized float animation - reduced movement for better mobile experience */
+@media (max-width: 768px) {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+/* Pulse animation for resume button */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0px 4px 4px #00000040;
+  }
+  50% {
+    box-shadow: 0px 4px 15px rgba(204, 0, 0, 0.4);
+  }
+}
+
+/* Mobile-optimized pulse animation - reduced intensity for better mobile performance */
+@media (max-width: 768px) {
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0px 4px 4px #00000040;
+    }
+    50% {
+      box-shadow: 0px 4px 8px rgba(204, 0, 0, 0.3);
+    }
+  }
+}
+
+/* Gradient shift animation for greeting text */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Subtle background gradient animation */
+@keyframes subtleGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Floating dots animation */
+@keyframes floatingDots {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  66% {
+    transform: translateY(5px) translateX(-5px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+/* Slide in up animation for social container */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile-optimized slide in animation - reduced distance for smoother mobile experience */
+@media (max-width: 768px) {
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Fade in up animation for text elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile-optimized fade in animation - reduced distance for better mobile performance */
+@media (max-width: 768px) {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 /* Hide scroll indicator on very small screens or short screens */
 @media (max-height: 600px) {
   .scroll-indicator {
     display: none;
+  }
+}
+
+/* Respect user's motion preferences - disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .profile_pic,
+  .resume,
+  #hello_world,
+  #self-introduction,
+  #socialAPP,
+  .scroll-indicator {
+    animation: none !important;
+  }
+  
+  .profile_pic:hover,
+  .resume:hover,
+  .social:hover,
+  #socialAPP:hover {
+    transform: none !important;
+  }
+}
+
+/* Performance optimization for mobile devices */
+@media (max-width: 768px) {
+  /* Enable hardware acceleration for smoother animations */
+  .profile_pic,
+  .resume,
+  #socialAPP,
+  .social {
+    will-change: transform;
+    transform: translateZ(0); /* Force hardware acceleration */
+  }
+  
+  /* Reduce animation intensity on smaller screens */
+  .social:hover {
+    transform: translateY(-2px) scale(1.05) !important;
   }
 }
 
@@ -338,5 +612,20 @@
     60% {
       transform: translateX(-50%) scale(0.8) translateY(-3px);
     }
+  }
+  
+  /* Reduce all animation durations for better mobile performance */
+  .profile_pic {
+    animation-duration: 4s !important; /* Slower float animation */
+  }
+  
+  .resume {
+    animation-duration: 3s !important; /* Slower pulse animation */
+  }
+  
+  /* Reduce hover effects intensity on very small screens */
+  .social:hover {
+    transform: scale(1.02) !important;
+    filter: brightness(1.1) !important;
   }
 }

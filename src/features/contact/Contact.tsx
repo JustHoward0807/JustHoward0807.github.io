@@ -8,7 +8,7 @@ function Contact() {
 
     useEffect(() => {
         const typed = new Typed(el.current, {
-            strings: ["Software Engineer", "Web Developer", "Full Stack Developer", "Backend Developer", "Frontend Developer", "Mobile App Developer", "UI/UX Developer", "Game Developer", "Database Developer"],
+            strings: ["Software Engineer", "Web Developer", "Full Stack Developer", "Backend Developer", "Frontend Developer", "Mobile App Developer", "UI/UX Developer"],
             typeSpeed: 30,
             backSpeed: 10,
             backDelay: 2000,
@@ -31,7 +31,7 @@ function Contact() {
                     <p className='fs-5 mx-3 text-center' style={{ opacity: "60%" }}>Feel free to contact me or just come say Hi! </p>
                     <p className='fs-6 mx-3 text-center' style={{ opacity: "60%" }}>I'm open to positions such as:</p>
                     <div>
-                        <span ref={el} className='fs-3' style={{ fontFamily: "Anonymous Pro" }} />
+                        <span ref={el} className='fs-3' style={{ fontFamily: "JetBrains Mono" }} />
                     </div>
 
                     <Button className='contactBtn mt-4 fs-5' onClick={() => window.open('mailto:howardongdev0807@gmail.com')}>Say Hi</Button>
